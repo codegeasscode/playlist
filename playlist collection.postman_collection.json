@@ -1,0 +1,1264 @@
+{
+	"info": {
+		"_postman_id": "3e8ea791-39a7-47c3-aacb-355d35a1eac8",
+		"name": "playlist collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25147820"
+	},
+	"item": [
+		{
+			"name": "User crud",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"naruto\",\n  \"email\": \"naruto@gmail.com\",\n  \"password\": \"12345\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/users/register/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sign up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"naruto\",\n  \"email\": \"naruto@gmail.com\",\n  \"password\": \"12345\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/users/register/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 18:28:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"naruto\",\n    \"email\": \"naruto@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "bulk create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "RFuMhTFAJmUDjVe6AwfQtwBwmDkCAeME",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n        {\n            \"username\": \"kakashi\",\n            \"email\": \"kakashi@gmail.com\",\n            \"password\":12345\n        },\n        {\n            \"username\": \"sasuke\",\n            \"email\": \"sasuke@gmail.com\",\n            \"password\":12345\n        }\n    ]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/users/users/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "bulk create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "RFuMhTFAJmUDjVe6AwfQtwBwmDkCAeME",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n        {\n            \"username\": \"kakashi\",\n            \"email\": \"kakashi@gmail.com\",\n            \"password\":12345\n        },\n        {\n            \"username\": \"sasuke\",\n            \"email\": \"sasuke@gmail.com\",\n            \"password\":12345\n        }\n    ]\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/users/users/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 19:38:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 4,\n        \"username\": \"kakashi\",\n        \"email\": \"kakashi@gmail.com\"\n    },\n    {\n        \"id\": 5,\n        \"username\": \"sasuke\",\n        \"email\": \"sasuke@gmail.com\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"naruto\",\n  \"password\": \"12345\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/users/login/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"naruto\",\n  \"password\": \"12345\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/users/login/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 18:34:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "csrftoken=6ckgF0bn6lZPhyST4bxNuiKI1aFLKKPZ; expires=Sun, 12 Oct 2025 18:34:15 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "sessionid=kke6zv6p3pjxdcmbd90dvdba12etto4n; expires=Sun, 27 Oct 2024 18:34:15 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"naruto\",\n    \"email\": \"naruto@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/users/2/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/users/2/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 18:36:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"naruto\",\n    \"email\": \"naruto@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get user Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "6ckgF0bn6lZPhyST4bxNuiKI1aFLKKPZ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"naruto\",\n  \"email\": \"naruto1@gmail.com\",\n  \"password\": \"12345\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/users/2/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user Copy",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "6ckgF0bn6lZPhyST4bxNuiKI1aFLKKPZ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"naruto\",\n  \"email\": \"naruto1@gmail.com\",\n  \"password\": \"12345\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/users/2/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 18:39:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"naruto\",\n    \"email\": \"naruto1@gmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "6ckgF0bn6lZPhyST4bxNuiKI1aFLKKPZ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/api/users/2/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "6ckgF0bn6lZPhyST4bxNuiKI1aFLKKPZ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/api/users/2/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 18:41:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "sessionid=\"\"; expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; Path=/; SameSite=Lax"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "songs api",
+			"item": [
+				{
+					"name": "list songs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/songs/?page_size=2&page=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"songs",
+								""
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list songs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/songs/?page_size=2&page=2",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"songs",
+										""
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "2"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 18:51:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "888"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 100,\n    \"next\": \"http://localhost:8000/api/songs/?page=3&page_size=2\",\n    \"previous\": \"http://localhost:8000/api/songs/?page_size=2\",\n    \"results\": [\n        {\n            \"id\": 3,\n            \"uid\": \"093PI3mdUvOSlvMYDwnV1e\",\n            \"title\": \"11:11\",\n            \"danceability\": \"0.4450\",\n            \"energy\": \"0.528000\",\n            \"key\": 10,\n            \"loudness\": \"-7.243000\",\n            \"mode\": 1,\n            \"acousticness\": \"0.677000\",\n            \"instrumentalness\": \"0.00000000\",\n            \"liveness\": \"0.155000\",\n            \"valence\": \"0.511000\",\n            \"tempo\": \"203.1550\",\n            \"duration_ms\": 223452,\n            \"time_signature\": 4,\n            \"num_bars\": 187,\n            \"num_sections\": 12,\n            \"num_segments\": 776,\n            \"classification\": 1\n        },\n        {\n            \"id\": 4,\n            \"uid\": \"64yrDBpcdwEdNY9loyEGbX\",\n            \"title\": \"21 Guns\",\n            \"danceability\": \"0.2680\",\n            \"energy\": \"0.742000\",\n            \"key\": 5,\n            \"loudness\": \"-4.939000\",\n            \"mode\": 1,\n            \"acousticness\": \"0.051800\",\n            \"instrumentalness\": \"0.00000000\",\n            \"liveness\": \"0.626000\",\n            \"valence\": \"0.416000\",\n            \"tempo\": \"159.7790\",\n            \"duration_ms\": 321093,\n            \"time_signature\": 4,\n            \"num_bars\": 214,\n            \"num_sections\": 9,\n            \"num_segments\": 837,\n            \"classification\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "query songs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/songs/query/?page_size=2&page=1&query=loudness:gt:-8&query=acousticness:gt:0.7",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"songs",
+								"query",
+								""
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "query",
+									"value": "loudness:gt:-8"
+								},
+								{
+									"key": "query",
+									"value": "acousticness:gt:0.7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "query songs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/songs/query/?page_size=2&page=1&query=loudness:gt:-8&query=acousticness:gt:0.7",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"songs",
+										"query",
+										""
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "2"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "query",
+											"value": "loudness:gt:-8"
+										},
+										{
+											"key": "query",
+											"value": "acousticness:gt:0.7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 20:21:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "438"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 30,\n            \"uid\": \"393Zq7DKr6IxkmJp5bRe6j\",\n            \"title\": \"anything in the world\",\n            \"danceability\": \"0.6570\",\n            \"energy\": \"0.564000\",\n            \"key\": 11,\n            \"loudness\": \"-4.523000\",\n            \"mode\": 1,\n            \"acousticness\": \"0.724000\",\n            \"instrumentalness\": \"0.25700000\",\n            \"liveness\": \"0.372000\",\n            \"valence\": \"0.444000\",\n            \"tempo\": \"140.0350\",\n            \"duration_ms\": 116492,\n            \"time_signature\": 4,\n            \"num_bars\": 67,\n            \"num_sections\": 5,\n            \"num_segments\": 442,\n            \"classification\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "search on title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/songs/search/?title=21&page=1&page_size=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"songs",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "21"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "search on title",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/songs/search/?title=21&page=1&page_size=2",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"songs",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "21"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 18:55:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "789"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 4,\n            \"uid\": \"64yrDBpcdwEdNY9loyEGbX\",\n            \"title\": \"21 Guns\",\n            \"danceability\": \"0.2680\",\n            \"energy\": \"0.742000\",\n            \"key\": 5,\n            \"loudness\": \"-4.939000\",\n            \"mode\": 1,\n            \"acousticness\": \"0.051800\",\n            \"instrumentalness\": \"0.00000000\",\n            \"liveness\": \"0.626000\",\n            \"valence\": \"0.416000\",\n            \"tempo\": \"159.7790\",\n            \"duration_ms\": 321093,\n            \"time_signature\": 4,\n            \"num_bars\": 214,\n            \"num_sections\": 9,\n            \"num_segments\": 837,\n            \"classification\": 1\n        },\n        {\n            \"id\": 5,\n            \"uid\": \"2jiI8bNSDu7UxTtDCOqh3L\",\n            \"title\": \"21\",\n            \"danceability\": \"0.6800\",\n            \"energy\": \"0.724000\",\n            \"key\": 6,\n            \"loudness\": \"-5.633000\",\n            \"mode\": 0,\n            \"acousticness\": \"0.163000\",\n            \"instrumentalness\": \"0.00000000\",\n            \"liveness\": \"0.349000\",\n            \"valence\": \"0.566000\",\n            \"tempo\": \"109.9740\",\n            \"duration_ms\": 207130,\n            \"time_signature\": 4,\n            \"num_bars\": 94,\n            \"num_sections\": 9,\n            \"num_segments\": 759,\n            \"classification\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "rate song",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "RFuMhTFAJmUDjVe6AwfQtwBwmDkCAeME",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"song\":1,\n    \"rating\":5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/songs/rate-song/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"songs",
+								"rate-song",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "rate song",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "RFuMhTFAJmUDjVe6AwfQtwBwmDkCAeME",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"song\":1,\n    \"rating\":5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/songs/rate-song/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"songs",
+										"rate-song",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 19:26:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"song\": 1,\n    \"rating\": 5,\n    \"user\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "get user rated song",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "RFuMhTFAJmUDjVe6AwfQtwBwmDkCAeME",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/api/songs/rated-songs/?page=1&page_sizze=1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"songs",
+								"rated-songs",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_sizze",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user rated song",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-CSRFToken",
+										"value": "RFuMhTFAJmUDjVe6AwfQtwBwmDkCAeME",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/api/songs/rated-songs/?page=1&page_sizze=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"songs",
+										"rated-songs",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_sizze",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 13 Oct 2024 19:51:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"song\": \"3AM\",\n            \"rating\": 5\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	]
+}
